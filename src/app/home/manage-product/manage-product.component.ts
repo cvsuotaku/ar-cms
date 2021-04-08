@@ -18,4 +18,9 @@ export class ManageProductComponent implements OnInit {
     });
   }
 
+  updateARView(event: any, arId: string): void {
+    this.arService.updateProduct(arId, event.currentTarget.checked).subscribe(data=> {
+      console.log(data);
+    });
+  }
 }

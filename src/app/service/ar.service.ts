@@ -19,4 +19,10 @@ export class ArService {
   retrieveProducts(): Observable<any> {
     return this.http.get(environment.url + "dummy/products", this.httpOptions);
   }
+
+  updateProduct(arId: string, isArActive: boolean): Observable<any> {
+    return this.http.patch(environment.url + "products/" + arId, {
+      active: isArActive
+    }, this.httpOptions);
+  }
 }
